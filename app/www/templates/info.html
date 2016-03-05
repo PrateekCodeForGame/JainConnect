@@ -1,5 +1,5 @@
 <ion-view title="Info" style="background-color: #5dd0c2;">
-    <ion-content overflow-scroll="false" padding="true" scroll="true" class="has-header">
+    <ion-content overflow-scroll="false" padding="true" scroll="false" class="has-header" style="overflow: auto;">
         <form class="list">
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
@@ -7,7 +7,7 @@
             </label>
         </form>
         <div class="button-bar" ng-repeat="contact in showContacts">
-            <a ui-sref="completeInfo" class="button button-stable button-block button-small" style="padding: 5%; font-size: 15px;">{{contact.name}}</a>
+            <a ui-sref="completeInfo" class="button button-stable button-block button-small" ng-click="linkAddress(contact.id)" style="padding: 5%; font-size: 15px;">{{contact.name}}</a>
             <a href="tel:148536665552" class="button button-stable button-block button-small icon-right ion-android-call" style="padding: 5%; font-size: 15px;">{{contact.phone}}</a>
         </div>
     </ion-content>

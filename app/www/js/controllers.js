@@ -52,14 +52,23 @@ angular.module('app.controllers', [])
 			}
 		}
 	};
+
+	$scope.linkAddress = function(index) {
+		Linkdata.updateAddress(index);
+	};
 })
    
 .controller('gasAgencyCtrl', function($scope) {
 
 })
    
-.controller('completeInfoCtrl', function($scope) {
-
+.controller('completeInfoCtrl', function($scope, Linkdata) {
+	$scope.contacts = Linkdata.contacts;
+	for (var i = 0; i < $scope.contacts.length; i++){
+		if( $scope.contacts[i].id == Linkdata.linkClicked) {
+			$scope.showContact = $scope.contacts[i];
+		};
+	}
 })
    
 .controller('addressGasAgencyCtrl', function($scope) {

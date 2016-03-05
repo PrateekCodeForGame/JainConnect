@@ -1,10 +1,11 @@
-<ion-view title="Complete Info">
+<ion-view title="Complete Info" style="background-color: #5dd0c2;">
     <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
         <ion-list>
             <ion-item class="item-thumbnail-left">
                 <img src="img/kUJeNFjeSma5M6ATHZNU_sym-jainism-210.gif">
-                <h2>Hukam Chand</h2>
-                <p>Add, Numbers</p>
+                <h2 style="white-space: normal; font-weight: bolder; padding-bottom: 5%;">{{showContact.name}}</h2>
+                <div  style="white-space: normal; padding-bottom: 5%;"><b>Address:</b> {{showContact.address}}</div>
+                <div style="white-space: normal; padding-bottom: 5%;"><b>Phone:</b> {{showContact.phone}}</div>
             </ion-item>
         </ion-list>
     </ion-content>
