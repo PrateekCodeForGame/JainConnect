@@ -40,8 +40,18 @@ angular.module('app.controllers', [])
 
 })
    
-.controller('infoCtrl', function($scope) {
+.controller('infoCtrl', function($scope, Linkdata) {
+	$scope.contacts = Linkdata.contacts;
+	$scope.showContacts = Linkdata.contacts;
 
+	$scope.searchName = function(keyword) {
+		$scope.showContacts = [];
+		for (var i = 0; i < $scope.contacts.length; i++){
+			if( $scope.contacts[i].name.toLowerCase().indexOf(keyword) >= 0 ){
+				$scope.showContacts.push($scope.contacts[i]);
+			}
+		}
+	};
 })
    
 .controller('gasAgencyCtrl', function($scope) {

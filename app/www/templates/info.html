@@ -1,14 +1,14 @@
 <ion-view title="Info" style="background-color: #5dd0c2;">
-    <ion-content overflow-scroll="true" padding="true" scroll="false" class="has-header">
+    <ion-content overflow-scroll="false" padding="true" scroll="true" class="has-header">
         <form class="list">
             <label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
-                <input type="search" placeholder="">
+                <input type="search" placeholder="Enter a name" ng-model="searchKeyword" ng-change="searchName(searchKeyword)">
             </label>
         </form>
-        <div class="button-bar">
-            <a ui-sref="completeInfo" class="button button-stable button-block button-small">Hukam Chand</a>
-            <a href="tel:148536665552" class="button button-stable button-block button-small icon-right ion-android-call">589632145</a>
+        <div class="button-bar" ng-repeat="contact in showContacts">
+            <a ui-sref="completeInfo" class="button button-stable button-block button-small" style="padding: 5%; font-size: 15px;">{{contact.name}}</a>
+            <a href="tel:148536665552" class="button button-stable button-block button-small icon-right ion-android-call" style="padding: 5%; font-size: 15px;">{{contact.phone}}</a>
         </div>
     </ion-content>
 </ion-view>
